@@ -1,5 +1,5 @@
 <template lang="pug">
-  transition(name= "fade")
+  transition(name= "slide")
     .modal.modal-mask
       .modal-dialog(role="document")
         .modal-content
@@ -12,17 +12,11 @@
 </template>
 
 <style lang="scss" scoped>
-/*.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}*/
-.fade-enter-active {
+.slide-enter-active {
   animation: coming .5s;
   opacity: 0;
 }
-.fade-leave-active {
+.slide-leave-active {
   animation: going .5s;
 }
 @keyframes going {

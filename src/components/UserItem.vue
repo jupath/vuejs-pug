@@ -1,14 +1,15 @@
 <template lang="pug">
-  .col-sm-6.col-md-4.mb-4
-    .user-wrapper.p-3
-      .user__header.pb-3
-        h4 {{ user.name | capitalize }}
-        span(@click="handleDelete") &#10006;
-      p Email: {{ user.email }}
-      p Age: {{ user.age }}
-      p Gender: {{ user.gender }}
-      p Country: {{ user.country }}
-      p Services: {{ listServices }}
+  transition(name="fade")
+    .col-sm-6.col-md-4.mb-4
+      .user-wrapper.p-3
+        .user__header.pb-3
+          h4 {{ user.name | capitalize }}
+          span(@click="handleDelete") &#10006;
+        p Email: {{ user.email }}
+        p Age: {{ user.age }}
+        p Gender: {{ user.gender }}
+        p Country: {{ user.country }}
+        p Services: {{ listServices }}
 </template>
 
 <script>
@@ -30,6 +31,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
 .user-wrapper {
   background-color: white;
   border: 1px solid #eee;
